@@ -1,8 +1,7 @@
 # TRIVIA
 Trivia game with React
 
-
-###Technologies used: 
+## Technologies used:
 
 1. React with TS
 2. Redux with Thunk
