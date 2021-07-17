@@ -1,5 +1,5 @@
 # TRIVIA
-Site url: https://thecodedealer.github.io/trivia/
+DEMO: https://thecodedealer.github.io/trivia/
 
 ## Technologies used:
 
