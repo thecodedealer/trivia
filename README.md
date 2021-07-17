@@ -1,5 +1,5 @@
 # TRIVIA
-Trivia game with React
+Site url: https://thecodedealer.github.io/trivia/
 
 ## Technologies used:
 
