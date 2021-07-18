@@ -9,5 +9,5 @@ DEMO: https://thecodedealer.github.io/trivia/
 4. Immer 
 5. ReReducer (Personal library)
 
-> DISCLAIMER: ReReducer is a personal library still under development in process to be submitted on NPM
+> DISCLAIMER: ReReducer is a personal library still under development and in process to be submitted on NPM
     

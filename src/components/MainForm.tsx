@@ -9,13 +9,25 @@ interface IProps {
 }
 
 const useStyles = makeStyles((theme) => ({
+    card: {
+        textAlign: 'center'
+    },
     formControl: {
         margin: theme.spacing(1),
-        minWidth: 120,
+        minWidth: 200,
     },
     selectEmpty: {
         marginTop: theme.spacing(2),
     },
+    title: {
+        marginBottom: theme.spacing(5)
+    },
+    btns: {
+        marginTop: theme.spacing(5)
+    },
+    info: {
+        marginTop: theme.spacing(3)
+    }
 }));
 
 export const MainForm: FC<IProps> = () => {
@@ -61,13 +73,16 @@ export const MainForm: FC<IProps> = () => {
     }
 
     return (
-        <>
-            <Typography variant="h4" component="h2">
-                Config Questions
-            </Typography>
+        <div className={classes.card}>
+
+            <div className={classes.title}>
+                <Typography variant="h5" component="h2">
+                    Select your preferences
+                </Typography>
+            </div>
 
             <FormControl className={classes.formControl}>
-                <InputLabel id="demo-simple-select-label">Amount</InputLabel>
+                <InputLabel id="demo-simple-select-label">Number of questions</InputLabel>
                 <Select
                     labelId="demo-simple-select-label"
                     id="demo-simple-select"
@@ -126,11 +141,18 @@ export const MainForm: FC<IProps> = () => {
                 </Select>
             </FormControl>
 
-            <div>
-                <Button variant="contained" onClick={handleGenerateQuestions}>GENERATE
-                    QUESTIONS</Button>
+            <div className={classes.info}>
+                <Typography
+                    variant="caption">{`You will have ${amount} minutes to complete the questionnaire!`}
+                </Typography>
             </div>
-        </>
+
+            <div className={classes.btns}>
+                <Button variant="contained" color="primary" onClick={handleGenerateQuestions}>
+                    START GAME
+                </Button>
+            </div>
+        </div>
     );
 }
 

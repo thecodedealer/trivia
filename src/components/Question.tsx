@@ -2,7 +2,8 @@ import React, {FC, useCallback, useMemo} from "react";
 import {IQuestion} from "../interfaces";
 import {FormControl, FormControlLabel, FormLabel, Radio, RadioGroup} from "@material-ui/core";
 import {saveQuestion} from "../store/modules/main/thunk/basic-actions";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {selectQuestion} from "../store/modules/main/plain/selectors";
 
 interface IProps {
     question: IQuestion
@@ -10,6 +11,8 @@ interface IProps {
 
 export const Question: FC<IProps> = ({question}) => {
     const dispatch = useDispatch()
+
+    const questionId = useSelector(selectQuestion)
 
     const allVariants: string[] = useMemo(() => {
         return [...question.incorrect_answers, question.correct_answer]
@@ -20,9 +23,9 @@ export const Question: FC<IProps> = ({question}) => {
     }, [dispatch])
 
     return (
-        <React.Fragment>
+        <>
             <FormControl component="fieldset">
-                <FormLabel component="legend">{question.question}</FormLabel>
+                <FormLabel component="legend">{questionId}. {question.question}</FormLabel>
                 <br/>
                 <RadioGroup aria-label="gender" name="gender1">
                     {
@@ -34,7 +37,7 @@ export const Question: FC<IProps> = ({question}) => {
                     }
                 </RadioGroup>
             </FormControl>
-        </React.Fragment>
+        </>
 
     );
 }
