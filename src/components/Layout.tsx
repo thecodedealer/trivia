@@ -63,7 +63,7 @@ export const Layout: FC<IProps> = () => {
             <AppBar position="absolute" color="default" className={classes.appBar}>
                 <Toolbar>
                     <Typography variant="h6" color="inherit" noWrap>
-                        TRIVIA GAME
+                        TRIVIA APP
                     </Typography>
 
                 </Toolbar>
